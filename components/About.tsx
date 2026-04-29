@@ -52,7 +52,7 @@ function SectionLabel({ children }: { children: string }) {
 const stagger = { hidden: {}, show: { transition: { staggerChildren: 0.1 } } };
 const fadeUp = {
   hidden: { opacity: 0, y: 40, filter: "blur(8px)" },
-  show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.75, ease: [0.16, 1, 0.3, 1] } },
+  show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.75, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } },
 };
 
 export default function About() {
