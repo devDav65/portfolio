@@ -38,6 +38,8 @@ const ICON_FILES: Record<string, string> = {
   Debian: "/icons/debian-original.svg",
   Windows: "/icons/windows11-original.svg",
   SQL: "/icons/azuresqldatabase-original.svg",
+  Supabase: "/icons/supabase-original.svg",
+  Postman :"/icons/postman-plain.svg"
 };
 
 const categoryColors: Record<string, { primary: string; glow: string }> = {

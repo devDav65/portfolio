@@ -65,7 +65,7 @@ export const skills = [
   },
   {
     category: "Outils",
-    items: ["Docker", "Git", "GitHub", "Nginx", "Redis"],
+    items: ["Docker", "Git", "GitHub", "Nginx", "Redis", "Supabase", "Postman"],
   },
   {
     category: "IDE",
