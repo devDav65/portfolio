@@ -114,7 +114,27 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
+
+    // Simulation de chargement pour l'animation (1.2 seconde)
     await new Promise(r => setTimeout(r, 1200));
+
+    // Construction du message WhatsApp avec mise en forme grasse (*texte*)
+    const messageText = `Bonjour ! Nouveau message depuis le portfolio :
+
+*Nom complet :* ${form.name}
+*Email :* ${form.email}
+*Sujet :* ${form.subject}
+
+*Message :*
+${form.message}`;
+
+    // Encodage propre de l'URL pour gérer les espaces et caractères spéciaux
+    const encodedText = encodeURIComponent(messageText);
+    const whatsappUrl = `https://wa.me/22871254851?text=${encodedText}`;
+
+    // Ouverture de WhatsApp dans un nouvel onglet
+    window.open(whatsappUrl, "_blank");
+
     setSending(false);
     setSent(true);
   };
@@ -265,12 +285,12 @@ export default function Contact() {
                     transition={{ type: "spring", stiffness: 200, damping: 15 }}
                     className="text-6xl"
                   >
-                    ✅
+                    🚀
                   </motion.div>
                   <div className="relative z-10 space-y-3">
-                    <h3 className="font-syne font-black text-2xl text-[#EDE0D4]">Message envoyé !</h3>
+                    <h3 className="font-syne font-black text-2xl text-[#EDE0D4]">Redirection WhatsApp...</h3>
                     <p className="text-[#EDE0D4]/45 max-w-xs text-sm leading-relaxed">
-                      Merci pour votre message. Je vous répondrai dans les plus brefs délais.
+                      Votre message a été mis en forme. Il ne vous reste plus qu'à cliquer sur "Envoyer" dans WhatsApp.
                     </p>
                   </div>
                 </motion.div>
